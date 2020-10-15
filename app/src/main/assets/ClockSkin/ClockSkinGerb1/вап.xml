@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>вап_sun.png</image>
+	<image>вап_mon.png</image>
+	<image>вап_tue.png</image>
+	<image>вап_wed.png</image>
+	<image>вап_thu.png</image>
+	<image>вап_fri.png</image>
+	<image>вап_sat.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0' type='array_weekday' autoscale='1' font='a_MonumentoTitul' fontstyle='Bold' fontsize='18,86793'>
+<content>Вс</content>
+<content>Пн</content>
+<content>Вт</content>
+<content>Ср</content>
+<content>Чт</content>
+<content>Пт</content>
+<content>Сб</content>
+</metadata>
+-->
+</drawables>

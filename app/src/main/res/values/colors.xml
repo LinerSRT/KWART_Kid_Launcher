@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#558B2F</color>
+    <color name="background">#000000</color>
+    <color name="text">#DEDEDE</color>
+
+
+    <color name="recycler_item_color">#212227</color>
+</resources>

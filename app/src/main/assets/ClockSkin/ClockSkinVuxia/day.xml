@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>day_num_0.png</image>
+	<image>day_num_1.png</image>
+	<image>day_num_2.png</image>
+	<image>day_num_3.png</image>
+	<image>day_num_4.png</image>
+	<image>day_num_5.png</image>
+	<image>day_num_6.png</image>
+	<image>day_num_7.png</image>
+	<image>day_num_8.png</image>
+	<image>day_num_9.png</image>
+	<image>day_num_minus.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0' type='array_day' forecolor='FFFFFF' autoscale='1' font='Times New Roman' fontstyle='Bold' fontsize='40,63493'>
+<content>0</content>
+<content>1</content>
+<content>2</content>
+<content>3</content>
+<content>4</content>
+<content>5</content>
+<content>6</content>
+<content>7</content>
+<content>8</content>
+<content>9</content>
+<content>.</content>
+</metadata>
+-->
+</drawables>

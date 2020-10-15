@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>vuxia.png</name>
+	</drawable>
+	<drawable>
+		<name>batt.png</name>
+		<rotate>6</rotate>
+		<centerY>-78</centerY>
+		<angle>210</angle>
+		<startAngle>300</startAngle>
+		<direction>1</direction>
+		<mulrotate>1</mulrotate>
+	</drawable>
+	<drawable>
+		<name>hour1.png</name>
+		<rotate>1</rotate>
+	</drawable>
+	<drawable>
+		<name>minute1.png</name>
+		<rotate>2</rotate>
+	</drawable>
+	<drawable>
+		<name>second1.png</name>
+		<rotate>3</rotate>
+	</drawable>
+	<drawable>
+		<name>weather_array.xml</name>
+		<arraytype>10</arraytype>
+		<centerY>91</centerY>
+	</drawable>
+	<drawable>
+		<name>temp.xml</name>
+		<arraytype>11</arraytype>
+		<centerX>1</centerX>
+		<centerY>137</centerY>
+	</drawable>
+	<drawable>
+		<name>day.xml</name>
+		<arraytype>4</arraytype>
+		<centerX>146</centerX>
+		<centerY>-2</centerY>
+	</drawable>
+	<drawable>
+		<name>week.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>109</centerX>
+		<centerY>-5</centerY>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0'/>
+-->
+</clockskin>

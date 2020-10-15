@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>clock_skin_panel.png</name>
+	</drawable>
+	<drawable>
+		<name>arrey second.xml</name>
+		<arraytype>9</arraytype>
+		<centerX>110</centerX>
+		<centerY>130</centerY>
+	</drawable>
+	<drawable>
+		<name>hour_minute_array_1.xml</name>
+		<arraytype>6</arraytype>
+		<centerX>-54</centerX>
+		<centerY>126</centerY>
+	</drawable>
+	<drawable>
+		<name>weather_array.xml</name>
+		<arraytype>10</arraytype>
+		<centerX>112</centerX>
+		<centerY>78</centerY>
+	</drawable>
+	<drawable>
+		<name>temperature_array.xml</name>
+		<arraytype>11</arraytype>
+		<centerX>9</centerX>
+		<centerY>73</centerY>
+	</drawable>
+	<drawable>
+		<name>battery_array.xml</name>
+		<arraytype>14</arraytype>
+		<centerX>-94</centerX>
+		<centerY>73</centerY>
+	</drawable>
+	<drawable>
+		<name>array second_num_colon.png</name>
+		<centerX>57</centerX>
+		<centerY>124</centerY>
+	</drawable>
+	<drawable>
+		<name>month.xml</name>
+		<arraytype>3</arraytype>
+		<centerX>-91</centerX>
+	</drawable>
+	<drawable>
+		<name>day.xml</name>
+		<arraytype>4</arraytype>
+		<centerX>55</centerX>
+		<centerY>2</centerY>
+	</drawable>
+	<drawable>
+		<name>weekday.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>104</centerX>
+		<centerY>2</centerY>
+	</drawable>
+	<drawable>
+		<name>a-hour-hand.png</name>
+		<rotate>1</rotate>
+	</drawable>
+	<drawable>
+		<name>a-minute-hand.png</name>
+		<rotate>2</rotate>
+	</drawable>
+	<drawable>
+		<name>seconds.png</name>
+		<rotate>3</rotate>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0'/>
+-->
+</clockskin>

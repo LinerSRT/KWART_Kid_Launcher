@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>0_3.png</image>
+	<image>1_3.png</image>
+	<image>2_3.png</image>
+	<image>3_3.png</image>
+	<image>4_3.png</image>
+	<image>5_3.png</image>
+	<image>6_3.png</image>
+	<image>7_3.png</image>
+	<image>8_3.png</image>
+	<image>9_3.png</image>
+	<image>none.png</image>
+	<image>percent.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0' type='array_battery_level' forecolor='FFFFFF' autoscale='1' font='Verdana' fontstyle='Bold' fontsize='10,61344'>
+<content>0</content>
+<content>1</content>
+<content>2</content>
+<content>3</content>
+<content>4</content>
+<content>5</content>
+<content>6</content>
+<content>7</content>
+<content>8</content>
+<content>9</content>
+<content></content>
+<content>%</content>
+</metadata>
+-->
+</drawables>

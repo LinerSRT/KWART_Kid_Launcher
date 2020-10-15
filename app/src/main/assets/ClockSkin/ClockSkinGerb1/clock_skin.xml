@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>1232432.png</name>
+		<rotate>3</rotate>
+		<centerX>97</centerX>
+		<centerY>85</centerY>
+	</drawable>
+	<drawable>
+		<name>tekstura-texture-poverxnost-gerb-rf-rossiya.png</name>
+	</drawable>
+	<drawable>
+		<name>цифры.png</name>
+		<centerX>-4</centerX>
+	</drawable>
+	<drawable>
+		<name>уук_1.png</name>
+		<centerX>94</centerX>
+		<centerY>-32</centerY>
+	</drawable>
+	<drawable>
+		<name>уук_2.png</name>
+		<centerX>-95</centerX>
+		<centerY>-32</centerY>
+	</drawable>
+	<drawable>
+		<name>уук.png</name>
+		<centerY>105</centerY>
+	</drawable>
+	<drawable>
+		<name>clock_skin_hour.png</name>
+		<rotate>1</rotate>
+	</drawable>
+	<drawable>
+		<name>clock_skin_minute.png</name>
+		<rotate>2</rotate>
+	</drawable>
+	<drawable>
+		<name>clock_skin_second.png</name>
+		<rotate>3</rotate>
+	</drawable>
+	<drawable>
+		<name>вап.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>-96</centerX>
+		<centerY>-31</centerY>
+	</drawable>
+	<drawable>
+		<name>увкп.xml</name>
+		<arraytype>4</arraytype>
+		<centerX>94</centerX>
+		<centerY>-30</centerY>
+	</drawable>
+	<drawable>
+		<name>ty5.xml</name>
+		<arraytype>14</arraytype>
+		<centerY>107</centerY>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0'/>
+-->
+</clockskin>

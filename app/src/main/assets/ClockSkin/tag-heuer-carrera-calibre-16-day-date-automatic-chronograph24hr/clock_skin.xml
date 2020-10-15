@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>clock_skin_panel.png</name>
+	</drawable>
+	<drawable>
+		<name>clock_skin_minute_mini.png</name>
+		<rotate>2</rotate>
+		<centerX>-84</centerX>
+	</drawable>
+	<drawable>
+		<name>rotate_battery_power.png</name>
+		<rotate>6</rotate>
+		<centerY>-76</centerY>
+		<mulrotate>2</mulrotate>
+	</drawable>
+	<drawable>
+		<name>array_day.xml</name>
+		<arraytype>4</arraytype>
+		<centerX>114</centerX>
+		<centerY>1</centerY>
+	</drawable>
+	<drawable>
+		<name>array_mont.xml</name>
+		<arraytype>3</arraytype>
+		<centerX>69</centerX>
+		<centerY>1</centerY>
+	</drawable>
+	<drawable>
+		<arraytype>99</arraytype>
+		<centerX>76</centerX>
+		<centerY>125</centerY>
+	</drawable>
+	<drawable>
+		<name>clock_skin_hour.png</name>
+		<rotate>1</rotate>
+	</drawable>
+	<drawable>
+		<name>clock_skin_minute.png</name>
+		<rotate>2</rotate>
+	</drawable>
+	<drawable>
+		<name>clock_skin_hour_mini.png</name>
+		<rotate>7</rotate>
+		<centerY>75</centerY>
+	</drawable>
+	<drawable>
+		<name>clock_skin_second.png</name>
+		<rotate>3</rotate>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0'/>
+-->
+</clockskin>

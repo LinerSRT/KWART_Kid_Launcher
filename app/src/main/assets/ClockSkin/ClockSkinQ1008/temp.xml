@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>temp_num_0.png</image>
+	<image>temp_num_1.png</image>
+	<image>temp_num_2.png</image>
+	<image>temp_num_3.png</image>
+	<image>temp_num_4.png</image>
+	<image>temp_num_5.png</image>
+	<image>temp_num_6.png</image>
+	<image>temp_num_7.png</image>
+	<image>temp_num_8.png</image>
+	<image>temp_num_9.png</image>
+	<image>temp_num_minus.png</image>
+	<image>temp_num_degree.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0' type='array_temprature' forecolor='80DCFF' autoscale='1' font='Arial' fontstyle='Bold' fontsize='18,75458'>
+<content>0</content>
+<content>1</content>
+<content>2</content>
+<content>3</content>
+<content>4</content>
+<content>5</content>
+<content>6</content>
+<content>7</content>
+<content>8</content>
+<content>9</content>
+<content>-</content>
+<content>°</content>
+</metadata>
+-->
+</drawables>

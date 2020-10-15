@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>clock_skin_model 5.png</name>
+	</drawable>
+	<drawable>
+		<name>weather_array.xml</name>
+		<arraytype>10</arraytype>
+		<centerX>-156</centerX>
+		<centerY>51</centerY>
+	</drawable>
+	<drawable>
+		<name>time_array_3_1.xml</name>
+		<arraytype>7</arraytype>
+		<centerX>-20</centerX>
+		<centerY>8</centerY>
+	</drawable>
+	<drawable>
+		<name>2point_1.png</name>
+		<centerX>22</centerX>
+		<centerY>10</centerY>
+	</drawable>
+	<drawable>
+		<name>time_array_3_2.xml</name>
+		<arraytype>8</arraytype>
+		<centerX>66</centerX>
+		<centerY>8</centerY>
+	</drawable>
+	<drawable>
+		<name>2point.png</name>
+		<centerX>110</centerX>
+		<centerY>11</centerY>
+	</drawable>
+	<drawable>
+		<name>time_array_3.xml</name>
+		<arraytype>9</arraytype>
+		<centerX>146</centerX>
+		<centerY>10</centerY>
+	</drawable>
+	<drawable>
+		<color>1</color>
+		<arraytype>99</arraytype>
+		<centerX>-119</centerX>
+		<centerY>177</centerY>
+	</drawable>
+	<drawable>
+		<name>battery level.xml</name>
+		<arraytype>14</arraytype>
+		<centerX>-127</centerX>
+		<centerY>-29</centerY>
+	</drawable>
+	<drawable>
+		<name>time_array_4.xml</name>
+		<arraytype>16</arraytype>
+		<centerX>105</centerX>
+		<centerY>-116</centerY>
+	</drawable>
+	<drawable>
+		<name>time_array.xml</name>
+		<arraytype>4</arraytype>
+		<centerX>-115</centerX>
+		<centerY>-116</centerY>
+	</drawable>
+	<drawable>
+		<name>month.xml</name>
+		<arraytype>3</arraytype>
+		<centerX>-14</centerX>
+		<centerY>-116</centerY>
+	</drawable>
+	<drawable>
+		<name>steps_array.xml</name>
+		<arraytype>12</arraytype>
+		<centerX>-92</centerX>
+		<centerY>145</centerY>
+	</drawable>
+	<drawable>
+		<name>weekday_array.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>98</centerX>
+		<centerY>152</centerY>
+	</drawable>
+	<drawable>
+		<name>temperature_array.xml</name>
+		<arraytype>11</arraytype>
+		<centerX>-100</centerX>
+		<centerY>51</centerY>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0'/>
+-->
+</clockskin>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>clock_skin_panel.png</name>
+	</drawable>
+	<drawable>
+		<name>bat_array.xml</name>
+		<arraytype>14</arraytype>
+		<centerX>135</centerX>
+		<centerY>-127</centerY>
+	</drawable>
+	<drawable>
+		<name>hour_minute_array.xml</name>
+		<arraytype>6</arraytype>
+		<centerX>-36</centerX>
+		<centerY>-39</centerY>
+	</drawable>
+	<drawable>
+		<name>num1_array.xml</name>
+		<arraytype>9</arraytype>
+		<centerX>146</centerX>
+		<centerY>-39</centerY>
+	</drawable>
+	<drawable>
+		<name>date_array.xml</name>
+		<arraytype>1</arraytype>
+		<centerX>-48</centerX>
+		<centerY>51</centerY>
+	</drawable>
+	<drawable>
+		<name>week_array.xml</name>
+		<arraytype>5</arraytype>
+		<centerX>150</centerX>
+		<centerY>51</centerY>
+	</drawable>
+	<drawable>
+		<name>month_array.xml</name>
+		<arraytype>3</arraytype>
+		<centerY>108</centerY>
+	</drawable>
+	<drawable>
+		<arraytype>99</arraytype>
+		<centerX>-19</centerX>
+		<centerY>161</centerY>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0'/>
+-->
+</clockskin>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clockskin>
+	<drawable>
+		<name>bg_square2.png</name>
+	</drawable>
+	<drawable>
+		<name>hand_hour_22.png</name>
+		<rotate>1</rotate>
+	</drawable>
+	<drawable>
+		<name>hand_minute_22.png</name>
+		<rotate>2</rotate>
+	</drawable>
+	<drawable>
+		<name>hand_second_9.png</name>
+		<rotate>3</rotate>
+	</drawable>
+	<drawable>
+		<name>bg.png</name>
+	</drawable>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.5.0.0'/>
+-->
+</clockskin>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>0_6.png</image>
+	<image>1_6.png</image>
+	<image>2_6.png</image>
+	<image>3_6.png</image>
+	<image>4_6.png</image>
+	<image>5_6.png</image>
+	<image>6_6.png</image>
+	<image>7_6.png</image>
+	<image>8_6.png</image>
+	<image>9_6.png</image>
+	<image>battery level_none.png</image>
+	<image>percent.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0' type='array_battery_level' autoscale='1' shadowx='1' shadowy='2' font='Stencil' fontstyle='Regular' fontsize='20,25216'>
+<content forecolor='000000'>0</content>
+<content forecolor='000000'>1</content>
+<content forecolor='000000'>2</content>
+<content forecolor='000000'>3</content>
+<content forecolor='000000'>4</content>
+<content forecolor='000000'>5</content>
+<content forecolor='000000'>6</content>
+<content forecolor='000000'>7</content>
+<content forecolor='000000'>8</content>
+<content forecolor='000000'>9</content>
+<content></content>
+<content forecolor='000000'>%</content>
+</metadata>
+-->
+</drawables>

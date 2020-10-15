@@ -1,0 +1,11 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:gravity="top">
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <solid android:color="@color/recycler_item_color" />
+            <size
+                android:width="8dp"
+                android:height="400dp" />
+        </shape>
+    </item>
+</layer-list>

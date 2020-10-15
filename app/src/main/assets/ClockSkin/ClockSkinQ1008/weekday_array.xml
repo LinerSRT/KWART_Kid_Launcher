@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<drawables>
+	<image>weekday_array_sun.png</image>
+	<image>weekday_array_mon.png</image>
+	<image>weekday_array_tue.png</image>
+	<image>weekday_array_wed.png</image>
+	<image>weekday_array_thu.png</image>
+	<image>weekday_array_fri.png</image>
+	<image>weekday_array_sat.png</image>
+<!--COMMENTED BY ClockSkinMaker
+<metadata gui='rra' version='1.4.8.0' type='array_weekday' forecolor='F5F5F5' autoscale='1' font='Arial' fontstyle='Bold' fontsize='29,53847'>
+<content forecolor='FF0000'>ВС</content>
+<content>ПН</content>
+<content>ВТ</content>
+<content>СР</content>
+<content>ЧТ</content>
+<content>ПТ</content>
+<content>СБ</content>
+</metadata>
+-->
+</drawables>
