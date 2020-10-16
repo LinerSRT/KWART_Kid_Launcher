@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:paddingStart="16dp"
-            android:text="Модель"
+            android:text="@string/watch_model"
             android:textColor="@color/text"
             android:textSize="18sp" />
 
@@ -45,7 +45,6 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:paddingStart="16dp"
-            android:text="KWART Kid One"
             android:textStyle="bold"
             android:textColor="@color/accent"
             android:textSize="22sp" />
@@ -57,7 +56,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:paddingStart="16dp"
-            android:text="IMEI"
+            android:text="@string/imei"
             android:textColor="@color/text"
             android:textSize="18sp" />
 
@@ -68,7 +67,6 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:paddingStart="16dp"
-            android:text="123456789123456"
             android:textStyle="bold"
             android:textColor="@color/accent"
             android:textSize="22sp" />

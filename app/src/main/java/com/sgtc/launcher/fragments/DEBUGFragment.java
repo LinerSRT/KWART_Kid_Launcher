@@ -100,29 +100,7 @@ public class DEBUGFragment extends Fragment {
         test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    Class phoneWindowManager = Class.forName("com.android.internal.policy.impl.PhoneWindowManager");
-                    Object statusBarService = phoneWindowManager.getDeclaredMethod("getStatusBarService").invoke(phoneWindowManager);
-
-
-                    for(Method method:phoneWindowManager.getDeclaredMethods()){
-                        Log.d("REFLECT", "Method: "+method.getName());
-                    }
-                    Method lockNow = phoneWindowManager.getDeclaredMethod("lockNow");
-                    lockNow.setAccessible(true);
-                    lockNow.invoke(phoneWindowManager, null);
-//                    Method test = phoneWindowManager.getMethod("showOrHideRecentAppsDialog");
-//                    test.setAccessible(true);
-//                    test.invoke(phoneWindowManager, 0);
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
-                } catch (NoSuchMethodException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
-                }
+                startActivity(getActivity().getPackageManager().getLaunchIntentForPackage(" com.sprd.fileexplorer"));
             }
         });
         return view;

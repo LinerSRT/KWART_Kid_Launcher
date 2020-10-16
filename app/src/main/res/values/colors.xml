@@ -6,4 +6,5 @@
 
 
     <color name="recycler_item_color">#212227</color>
+    <color name="recycler_item_color_dark">#151619</color>
 </resources>

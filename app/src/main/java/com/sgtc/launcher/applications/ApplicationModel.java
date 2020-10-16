@@ -8,12 +8,14 @@ public class ApplicationModel {
     public Intent intent;
     public String title;
     public String packageName;
+    public boolean requirePassword;
 
-    public ApplicationModel(Drawable icon, Intent intent, String title, String packageName) {
+    public ApplicationModel(Drawable icon, Intent intent, String title, String packageName, boolean requirePassword) {
         this.icon = icon;
         this.intent = intent;
         this.title = title;
         this.packageName = packageName;
+        this.requirePassword = requirePassword;
     }
 
     public ApplicationModel() {

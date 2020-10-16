@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sgtc.launcher">
 
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.SET_WALLPAPER" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -25,13 +26,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".settings.WatchInfoSettings"></activity>
+        <activity
+            android:name=".sync.DownloadAppActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".settings.WatchInfoSettings"
+            android:theme="@style/AppTheme" />
         <activity android:name=".settings.SettingsActivity" />
         <activity
             android:name=".AwardActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Launcher"
+            android:configChanges="locale|mcc|mnc|layoutDirection"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,6 +54,9 @@
             android:excludeFromRecents="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleTask"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".settings.PasswordSettings"
             android:theme="@style/AppTheme" />
     </application>
 

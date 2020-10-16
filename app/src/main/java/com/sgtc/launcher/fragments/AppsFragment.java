@@ -36,14 +36,17 @@ public class AppsFragment extends Fragment {
         recyclerView.setWillNotDraw(false);
         broadcast = new Broadcast(getContext(), new String[]{
                 getContext().getPackageName()+".SCROLL_APPS_TO_TOP",
-                getContext().getPackageName()+".UPDATE_APPS"
+                getContext().getPackageName()+".SETTINGS_CHANGED",
+                Intent.ACTION_LOCALE_CHANGED,
+                Intent.ACTION_PACKAGE_ADDED,
+                Intent.ACTION_PACKAGE_REMOVED
 
         }) {
             @Override
             public void handleChanged(Intent intent) {
                 if(intent.getAction().equalsIgnoreCase(getContext().getPackageName()+".SCROLL_APPS_TO_TOP")){
                     recyclerView.scrollToPosition(0);
-                } else {
+                } else if(intent.getAction().equalsIgnoreCase(getContext().getPackageName()+".SETTINGS_CHANGED")){
                     loadApps();
                 }
             }
@@ -63,9 +66,10 @@ public class AppsFragment extends Fragment {
         new ApplicationLoader(new Callback<ApplicationModel>() {
             @Override
             public void onDataLoaded(List<ApplicationModel> data) {
-                appsAdapter = new AppsAdapter(data);
+                appsAdapter = new AppsAdapter(getContext(), data);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 SnapHelper snapHelper = new LinearSnapHelper();
+                recyclerView.setOnFlingListener(null);
                 snapHelper.attachToRecyclerView(recyclerView);
                 recyclerView.setAdapter(appsAdapter);
             }

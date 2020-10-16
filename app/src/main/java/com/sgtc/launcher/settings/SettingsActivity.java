@@ -9,7 +9,9 @@ import android.view.KeyEvent;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.sgtc.launcher.R;
 
@@ -42,36 +44,53 @@ public class SettingsActivity extends AppCompatActivity {
                         new Intent(Settings.ACTION_BLUETOOTH_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 )
         );
+//        settingsItemList.add(
+//                new SettingsItem(
+//                        ContextCompat.getDrawable(this, R.drawable.sim_settings),
+//                        "Мобильная сеть",
+//                        new Intent(Settings.ACTION_WIRELESS_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+//                )
+//        );
         settingsItemList.add(
                 new SettingsItem(
-                        ContextCompat.getDrawable(this, R.drawable.sim_settings),
-                        "Мобильная сеть",
-                        new Intent(Settings.ACTION_WIRELESS_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        ContextCompat.getDrawable(this, R.drawable.settings_screen),
+                        getString(R.string.settings_screen_volume),
+                        new Intent(Settings.ACTION_DISPLAY_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 )
         );
         settingsItemList.add(
                 new SettingsItem(
                         ContextCompat.getDrawable(this, R.drawable.date_settings),
-                        "Дата и время",
+                        getString(R.string.settings_date_time),
                         new Intent(Settings.ACTION_DATE_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 )
         );
         settingsItemList.add(
                 new SettingsItem(
                         ContextCompat.getDrawable(this, R.drawable.language_settings),
-                        "Язык",
+                        getString(R.string.settings_language),
                         new Intent(Settings.ACTION_LOCALE_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 )
         );
         settingsItemList.add(
                 new SettingsItem(
+                        ContextCompat.getDrawable(this, R.drawable.security),
+                        getString(R.string.settings_control),
+                        new Intent(this, PasswordSettings.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
+        );
+        settingsItemList.add(
+                new SettingsItem(
                         ContextCompat.getDrawable(this, R.drawable.info_settings),
-                        "О часах",
+                        getString(R.string.settings_about_watch),
                         new Intent(this, WatchInfoSettings.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 )
         );
-        settingsAdapter = new SettingsAdapter(settingsItemList);
+        settingsAdapter = new SettingsAdapter(this, settingsItemList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        SnapHelper snapHelper = new LinearSnapHelper();
+        recyclerView.setOnFlingListener(null);
+        snapHelper.attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(settingsAdapter);
     }
 
@@ -82,5 +101,10 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

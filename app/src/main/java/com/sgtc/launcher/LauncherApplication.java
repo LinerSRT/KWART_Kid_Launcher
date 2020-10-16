@@ -1,7 +1,9 @@
 package com.sgtc.launcher;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.Application;
+import android.app.PendingIntent;
 import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
@@ -37,9 +39,10 @@ public class LauncherApplication extends Application {
     public static List<ClockSkin> clockSkinList;
     private Runnable mainThread;
     private Handler handler;
-    private long updateInterval = TimeUnit.SECONDS.toMillis(15);
+    private long updateInterval = TimeUnit.SECONDS.toMillis(20);
     private ContentObserver awardObserver;
     private Broadcast weatherBroadcast;
+    private Broadcast localeBroadcast;
 
     @SuppressLint("ResourceType")
     @Override
@@ -67,45 +70,21 @@ public class LauncherApplication extends Application {
                 PM.put(Config.WEATHER_ICON, intent.getStringExtra("type"));
             }
         };
+        localeBroadcast = new Broadcast(context, new String[]{
+                Intent.ACTION_LOCALE_CHANGED
+        }) {
+            @Override
+            public void handleChanged(Intent intent) {
+                restart();
+            }
+        };
+        localeBroadcast.setListening(true);
         weatherBroadcast.setListening(true);
         getContentResolver().registerContentObserver(NetCenter.COMMAND_URI, false, awardObserver);
         mainThread = new Runnable() {
             @Override
             public void run() {
                 PM.put(Config.CURRENT_STEPS, netCenter.getInt(NetCenter.STEPS_KEY, 0));
-
-
-                if (Config.DEBUG) {
-                    Log.d(TAG, "NetCenter: [key_qq_btn] {" + netCenter.getInt("key_qq_btn", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_ht_btn] {" + netCenter.getInt("key_ht_btn", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_lk_value] {" + netCenter.getInt("key_lk_value", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_fall_sos] {" + netCenter.getInt("key_fall_sos", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_server_host] {" + netCenter.getString("key_server_host", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_debug_server_host] {" + netCenter.getString("key_debug_server_host", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_total_turn_count_time] {" + netCenter.getString("key_total_turn_count_time", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_total_count_time] {" + netCenter.getString("key_total_count_time", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_app_url] {" + netCenter.getString("key_app_url", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_curr_location] {" + netCenter.getString("key_curr_location", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_yj_mode] {" + netCenter.getString("key_yj_mode", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_cell_loc] {" + netCenter.getString("key_cell_loc", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_server_port] {" + netCenter.getInt("key_server_port", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_satellite_count] {" + netCenter.getInt("key_satellite_count", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_low_battery] {" + netCenter.getBoolean("key_low_battery", false) + "}");
-                    Log.d(TAG, "NetCenter: [key_lowbat_state] {" + netCenter.getBoolean("key_lowbat_state", false) + "}");
-                    Log.d(TAG, "NetCenter: [key_smssend_switch] {" + netCenter.getBoolean("key_smssend_switch", false) + "}");
-                    Log.d(TAG, "NetCenter: [key_avoid_disturb] {" + netCenter.getBoolean("key_avoid_disturb", false) + "}");
-                    Log.d(TAG, "NetCenter: [key_set_profile] {" + netCenter.getInt("key_set_profile", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_turn_count_] {" + netCenter.getInt("key_turn_count_" + new SimpleDateFormat("yyyyMMdd").format(new Date()), 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_walk_count_] {" + netCenter.getInt("key_walk_count_" + new SimpleDateFormat("yyyyMMdd").format(new Date()), 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_total_turn_count] {" + netCenter.getInt("key_total_turn_count", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_total_count] {" + netCenter.getInt("key_total_count", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_lk_value] {" + netCenter.getInt("key_lk_value", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_curr_location] {" + netCenter.getString("key_curr_location", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_yj_mode] {" + netCenter.getString("key_yj_mode", "0") + "}");
-                    Log.d(TAG, "NetCenter: [key_fall_sos] {" + netCenter.getInt("key_fall_sos", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_battery_level] {" + netCenter.getInt("key_battery_level", 0) + "}");
-                    Log.d(TAG, "NetCenter: [key_gsm_signal] {" + netCenter.getInt("key_gsm_signal", 0) + "}");
-                }
                 handler.postDelayed(mainThread, updateInterval);
             }
         };
@@ -124,6 +103,7 @@ public class LauncherApplication extends Application {
         super.onTerminate();
         getContentResolver().unregisterContentObserver(awardObserver);
         weatherBroadcast.setListening(false);
+        localeBroadcast.setListening(false);
     }
 
     public static Context getContext() {
@@ -169,5 +149,17 @@ public class LauncherApplication extends Application {
             e.printStackTrace();
         }
 
+    }
+
+    public static void restart(){
+        Intent mStartActivity = new Intent(context, Launcher.class)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+        int id = 123456;
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, id, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+        AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + 200, pendingIntent);
+        System.exit(0);
     }
 }

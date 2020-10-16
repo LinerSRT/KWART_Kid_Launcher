@@ -17,6 +17,9 @@ public class ApplicationUtil {
     public static final HashMap<String, Integer> iconSet = new HashMap<>();
     public static final HashMap<String, String> nameSet = new HashMap<>();
     public static final List<String> hiddenApps = new ArrayList<>();
+    public static final List<String> protectedApps = new ArrayList<>();
+    public static final List<String> internetApps = new ArrayList<>();
+    public static final List<String> allApps = new ArrayList<>();
 
     public static void init(Context context) {
         iconSet.put("com.sgtc.wechat", R.drawable.chat);
@@ -27,8 +30,9 @@ public class ApplicationUtil {
         iconSet.put("com.android.camera2", R.drawable.camera);
         iconSet.put("com.sgtc.contact", R.drawable.contacts);
         iconSet.put("com.android.dialer", R.drawable.contacts);
+        iconSet.put("com.android.contacts", R.drawable.contacts);
         iconSet.put("com.example.sgtcappma", R.drawable.qr_code);
-        iconSet.put("com.example.sgtczxing", R.drawable.qr_code2);
+        iconSet.put("com.example.sgtczxing", R.drawable.qr_code);
         iconSet.put("com.sgtc.ppmf", R.drawable.friends);
         iconSet.put("com.tc3g.helpervoice", R.drawable.voice);
         iconSet.put("com.mediatek.filemanager", R.drawable.filemanager);
@@ -42,20 +46,53 @@ public class ApplicationUtil {
         iconSet.put("com.sg.vcall", R.drawable.videochat);
         iconSet.put("com.sgtc.sprd.friendwechat", R.drawable.chat);
         hiddenApps.add("com.android.deskclock");
-        //hiddenApps.add("com.android.contacts");
         hiddenApps.add("com.android.dialer");
         hiddenApps.add("com.android.mms");
         hiddenApps.add("com.example.sgtcappma");
-        hiddenApps.add("com.example.sgtczxing");
         hiddenApps.add("com.sgtc.introduce");
         hiddenApps.add("com.android.settings");
+        hiddenApps.add("ru.yandex.androidkeyboard");
         hiddenApps.add(context.getPackageName());
         nameSet.put("com.sg.gallery", context.getString(R.string.gallery_string));
-        nameSet.put("com.sgtc.sgclass", "Расписание");
-        nameSet.put("com.android.contacts", "Контакты");
-        nameSet.put("com.sg.vcall", "Видео-чат");
-        nameSet.put("com.sprd.fileexplorer", "Файлы");
-        nameSet.put("com.sg.sgphone", "Телефон");
+        nameSet.put("com.sgtc.sgclass", context.getString(R.string.schedule));
+        nameSet.put("com.sgtc.contact", context.getString(R.string.contacts_se));
+        nameSet.put("com.android.contacts", context.getString(R.string.contacts));
+        nameSet.put("com.sg.vcall", context.getString(R.string.video_chat));
+        nameSet.put("com.sprd.fileexplorer", context.getString(R.string.files));
+        nameSet.put("com.sg.sgphone", context.getString(R.string.phone));
+        nameSet.put("com.example.sgtczxing", context.getString(R.string.connect));
+        protectedApps.add("com.example.freakmath");
+        protectedApps.add("com.android.contacts");
+        protectedApps.add("com.android.contacts");
+        protectedApps.add("com.whatsapp");
+        protectedApps.add("ru.yandex.searchplugin");
+        internetApps.add("com.whatsapp");
+        internetApps.add("ru.yandex.searchplugin");
+        internetApps.add("com.sprd.fileexplorer");
+        allApps.add("com.sgtc.wechat");
+        allApps.add("com.sgtc.weather");
+        allApps.add("com.android.settings");
+        allApps.add("com.sgtc.stepcalculate");
+        allApps.add("com.sg.gallery");
+        allApps.add("com.android.camera2");
+        allApps.add("com.sgtc.contact");
+        allApps.add("com.android.dialer");
+        allApps.add("com.example.sgtcappma");
+        allApps.add("com.example.sgtczxing");
+        allApps.add("com.sgtc.ppmf");
+        allApps.add("com.tc3g.helpervoice");
+        allApps.add("com.mediatek.filemanager");
+        allApps.add("com.sprd.fileexplorer");
+        allApps.add("com.example.freakmath");
+        allApps.add("com.sgtc.sgclass");
+        allApps.add("org.crazyit.link");
+        allApps.add("com.sg.sgphone");
+        allApps.add("com.booyue.watch_hht");
+        allApps.add("zaojiao");
+        allApps.add("com.sg.vcall");
+        allApps.add("com.sgtc.sprd.friendwechat");
+        allApps.add("com.whatsapp");
+        allApps.add("ru.yandex.searchplugin");
     }
 
 
