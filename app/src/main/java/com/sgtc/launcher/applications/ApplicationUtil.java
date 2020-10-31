@@ -63,7 +63,6 @@ public class ApplicationUtil {
         nameSet.put("com.example.sgtczxing", context.getString(R.string.connect));
         protectedApps.add("com.example.freakmath");
         protectedApps.add("com.android.contacts");
-        protectedApps.add("com.android.contacts");
         protectedApps.add("com.whatsapp");
         protectedApps.add("ru.yandex.searchplugin");
         internetApps.add("com.whatsapp");
@@ -93,6 +92,13 @@ public class ApplicationUtil {
         allApps.add("com.sgtc.sprd.friendwechat");
         allApps.add("com.whatsapp");
         allApps.add("ru.yandex.searchplugin");
+        allApps.add("com.gonliapps.learngerman");
+        allApps.add("com.gonliapps.learnfrenchfree.game");
+        allApps.add("com.gonliapps.learnamericanenglish.forkidsandbeginners");
+        allApps.add("com.gonliapps.italian.kids.learn.game");
+        allApps.add("com.gonliapps.learnchineseforbeginners");
+        allApps.add("com.gonliapps.learnspanish");
+        allApps.add("com.gonliapps.learnportuguesefree.game");
     }
 
 

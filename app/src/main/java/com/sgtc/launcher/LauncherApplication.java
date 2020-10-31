@@ -11,7 +11,6 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.util.Log;
 
-
 import com.sgtc.launcher.ClockSkin.Model.ClockSkin;
 import com.sgtc.launcher.applications.ApplicationUtil;
 import com.sgtc.launcher.util.Broadcast;
@@ -20,9 +19,7 @@ import com.sgtc.launcher.util.PM;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -33,7 +30,6 @@ import static com.sgtc.launcher.Config.CLOCK_ENGINE_SUPPORT_TYPES;
 
 
 public class LauncherApplication extends Application {
-    private static final String TAG = "KWART_DEBUG";
     private static Context context;
     public static NetCenter netCenter;
     public static List<ClockSkin> clockSkinList;
@@ -48,54 +44,52 @@ public class LauncherApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        context = this;
-        handler = new Handler();
-        PM.init(this, "KWART");
-        ApplicationUtil.init(this);
-        netCenter = new NetCenter(this);
-        clockSkinList = new ArrayList<>();
-        clockSkinList.clear();
-        searchClockSkinAsset();
-        awardObserver = new ContentObserver(handler) {
-            @Override
-            public void onChange(boolean selfChange) {
-                super.onChange(selfChange);
-                startActivity(new Intent(context, AwardActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-            }
-        };
-        weatherBroadcast = new Broadcast(context, new String[]{"ACTION_WEATHER_UPDATED"}) {
-            @Override
-            public void handleChanged(Intent intent) {
-                PM.put(Config.WEATHER_TEMP, intent.getStringExtra("temp"));
-                PM.put(Config.WEATHER_ICON, intent.getStringExtra("type"));
-            }
-        };
-        localeBroadcast = new Broadcast(context, new String[]{
-                Intent.ACTION_LOCALE_CHANGED
-        }) {
-            @Override
-            public void handleChanged(Intent intent) {
-                restart();
-            }
-        };
-        localeBroadcast.setListening(true);
-        weatherBroadcast.setListening(true);
-        getContentResolver().registerContentObserver(NetCenter.COMMAND_URI, false, awardObserver);
-        mainThread = new Runnable() {
-            @Override
-            public void run() {
-                PM.put(Config.CURRENT_STEPS, netCenter.getInt(NetCenter.STEPS_KEY, 0));
-                handler.postDelayed(mainThread, updateInterval);
-            }
-        };
-        handler.post(mainThread);
-        WallpaperManager wallpaperManager = WallpaperManager.getInstance(getApplicationContext());
         try {
-            wallpaperManager.setResource(R.drawable.wallpaper);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
+            context = this;
+            handler = new Handler();
+            PM.init(this, "KWART");
+            ApplicationUtil.init(this);
+            netCenter = new NetCenter(this);
+            clockSkinList = new ArrayList<>();
+            clockSkinList.clear();
+            searchClockSkinAsset();
+            awardObserver = new ContentObserver(handler) {
+                @Override
+                public void onChange(boolean selfChange) {
+                    super.onChange(selfChange);
+                    startActivity(new Intent(context, AwardActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                }
+            };
+            weatherBroadcast = new Broadcast(context, new String[]{"ACTION_WEATHER_UPDATED"}) {
+                @Override
+                public void handleChanged(Intent intent) {
+                    PM.put(Config.WEATHER_TEMP, intent.getStringExtra("temp"));
+                    PM.put(Config.WEATHER_ICON, intent.getStringExtra("type"));
+                }
+            };
+            localeBroadcast = new Broadcast(context, new String[]{
+                    Intent.ACTION_LOCALE_CHANGED
+            }) {
+                @Override
+                public void handleChanged(Intent intent) {
+                    restart();
+                }
+            };
+            localeBroadcast.setListening(true);
+            weatherBroadcast.setListening(true);
+            getContentResolver().registerContentObserver(NetCenter.COMMAND_URI, false, awardObserver);
+            mainThread = new Runnable() {
+                @Override
+                public void run() {
+                    PM.put(Config.CURRENT_STEPS, netCenter.getInt(NetCenter.STEPS_KEY, 0));
+                    handler.postDelayed(mainThread, updateInterval);
+                }
+            };
+            handler.postDelayed(mainThread, 15000);
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
     @Override
@@ -151,14 +145,14 @@ public class LauncherApplication extends Application {
 
     }
 
-    public static void restart(){
+    public static void restart() {
         Intent mStartActivity = new Intent(context, Launcher.class)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         int id = 123456;
         PendingIntent pendingIntent = PendingIntent.getActivity(context, id, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
-        AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC, System.currentTimeMillis() + 200, pendingIntent);
         System.exit(0);
     }

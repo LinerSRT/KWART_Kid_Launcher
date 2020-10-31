@@ -12,7 +12,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.sgtc.launcher.fragments.AppsFragment;
 import com.sgtc.launcher.fragments.ControllFragment;
-import com.sgtc.launcher.fragments.DEBUGFragment;
 import com.sgtc.launcher.fragments.WatchfaceFragment;
 import com.sgtc.launcher.util.Broadcast;
 import com.sgtc.launcher.util.PM;
@@ -20,6 +19,7 @@ import com.sgtc.launcher.viewpager.FragmentAdapter;
 import com.sgtc.launcher.viewpager.GateTransformation;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class Launcher extends FragmentActivity {
     private ViewPager viewPager;
@@ -64,13 +64,13 @@ public class Launcher extends FragmentActivity {
                     sendBroadcast(new Intent(getPackageName() + ".SCROLL_APPS_TO_TOP"));
                     try {
                         Settings.Global.putInt(Launcher.this.getContentResolver(), "lock_invalid", 0);
-                    } catch (SecurityException e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
                 try {
                     Settings.Global.putInt(Launcher.this.getContentResolver(), "lock_invalid", 1);
-                } catch (SecurityException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -93,7 +93,6 @@ public class Launcher extends FragmentActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        recreate();
         LauncherApplication.restart();
     }
 
@@ -107,7 +106,7 @@ public class Launcher extends FragmentActivity {
         if (keyCode == KeyEvent.KEYCODE_POWER) {
             if (viewPager.getCurrentItem() == 1) {
                 PM.put("screen_timeout", Settings.System.getInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 60000));
-                Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, 1000);
+                Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_TIMEOUT, (int) TimeUnit.SECONDS.toMillis(1));
             }
             viewPager.setCurrentItem(1);
         }
